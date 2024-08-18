@@ -21,7 +21,11 @@ const transforms: Transforms = {
       return value;
     }
 
-    const rounds = toNumber(getOr(10, 'encryption.rounds', attribute));
+    if (value.toString().split('$').length === 4) { // Store the existing hash so users can use existing passwords between LMS and pro
+      return value.toString();
+    }
+
+    const rounds = 2; // TODO: use or add the launchpad SALT_BCRYPT value (it is set to 2)
 
     return bcrypt.hashSync(value.toString(), rounds);
   },
