@@ -1,5 +1,5 @@
 {
-  "name": "strapi",
+  "name": "@theblockcrypto/strapi",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/@theblockcrypto"
   },
